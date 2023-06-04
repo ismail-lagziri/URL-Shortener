@@ -1,6 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #1e90ff;
+  background: linear-gradient(90deg, #1a237e, #4a148c, #981b9a, #aa2460, #9c0e55, #7e1114, #ba1623, #7e4707);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -9,14 +11,27 @@ body {
   margin: 0;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 25% 75%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .container {
   text-align: center;
   width: 80%;
   max-width: 500px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #1e90ff;
   padding: 2rem;
   border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -35,10 +50,13 @@ input {
   border: 1px solid #1e90ff;
   border-radius: 5px;
   margin-right: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 button {
-  background-color: #1e90ff;
+  background: linear-gradient(135deg, #1e90ff, #800080);
   color: #ffffff;
   padding: 0.5rem 1rem;
   border: none;
@@ -47,9 +65,27 @@ button {
 }
 
 button:hover {
-  background-color: #1565c0;
+  background: linear-gradient(135deg, #1565c0, #6a0dad);
+}
+
+#result a {
+  text-decoration: none;
+  color: #1e90ff;
 }
 
 #result {
   margin-top: 1rem;
+  margin-left: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem;
+  border: 1px solid #1e90ff;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  overflow-wrap: break-word;
+  background-color: #ffffff;
+  color: #1e90ff;
+  box-sizing: border-box;
 }
