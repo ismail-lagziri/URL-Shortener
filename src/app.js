@@ -21,7 +21,7 @@ app.post('/shorten', (req, res) => {
   const existingShortId = Object.keys(urls).find(key => urls[key] === url);
 
   if (existingShortId) {
-    res.json({ shortUrl: `http://localhost:3000/${existingShortId}` });
+    res.json({ shortUrl: `https://url-shortener-avcf.onrender.com/${existingShortId}` });
   } else {
     const shortId = shortid.generate();
     urls[shortId] = url;
@@ -31,7 +31,7 @@ app.post('/shorten', (req, res) => {
         console.error('Failed to save URLs:', err);
         res.status(500).json({ error: 'Failed to save URLs' });
       } else {
-        res.json({ shortUrl: `http://localhost:3000/${shortId}` });
+        res.json({ shortUrl: `https://url-shortener-avcf.onrender.com/${shortId}` });
       }
     });
   }
